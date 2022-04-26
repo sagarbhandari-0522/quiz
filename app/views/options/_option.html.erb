@@ -1,3 +1,10 @@
 <p>
 	<%= option.title %>
 </p>
+<div>
+	<% if option.image.attached?%>
+		<p>
+			<%= image_tag option.image,width: "200px"%>
+		</p>
+	<%end %>
+</div>

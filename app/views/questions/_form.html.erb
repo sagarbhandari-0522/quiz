@@ -1,8 +1,9 @@
 <h1><%= a%></h1>
+<%= render 'shared/errors',obj:@question,a:'Question' %>
 <%= form_for @question do|form|%>
 	<div>
 		<%= form.label :title%><br>
-		<%= form.text_field :title%>
+		<%= form.text_field :title, include_blank: false, required: true%>
 	</div>
 	<div>
 		<%= form.collection_check_boxes :category_ids, Category.all, :id, :name%>

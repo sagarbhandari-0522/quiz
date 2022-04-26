@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class OptionsController < ApplicationController
   # def create
   #   @question = Question.find(params[:question_id])

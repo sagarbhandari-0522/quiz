@@ -1,9 +1,7 @@
 <%= @question.title%>
 <h2>Options</h2>
 <%= render @question.options%>
-<% unless @option[0].nil?%>
-	<p> Answer:
-		<%=@option[0][:title]%></p>
-<% end %>
+<p> Answer:
+	<%=@option[0][:title]%></p>
 <%= link_to 'Edit Question', edit_question_path(@question) if policy(@question).edit?%>
 <%= link_to 'Delete Question',question_path(@question), data:{turbo_method: :delete}if policy(@question).destroy?%>

@@ -1,0 +1,8 @@
+<% if obj.errors.any?%>
+	<h3>		<%= pluralize(obj.errors.count,"error")%>
+		<%="prohibited this #{a} from being saved:"%></h3>
+	<% obj.errors.full_messages.each do|message|%>
+		<li class="card-text"><%= message%></li>
+	<% end%>
+	<%= link_to 'New QUestion', new_question_path %>
+<%end%>

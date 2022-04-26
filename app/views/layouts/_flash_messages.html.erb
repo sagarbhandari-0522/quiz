@@ -1,9 +1,5 @@
 <% if flash.any? %>
 	<% flash.each do |name,msg|%>
-		<div class="row mt-1">
-			<div class='col-md-8 offset-md-3 alert alert-<%="#{name}"%> alert-dismissible fade show' role="alert">
-				<strong><%= msg %></strong>
-			</div>
-		</div>
+		<strong><%= msg %></strong>
 	<% end%>
 <% end%>

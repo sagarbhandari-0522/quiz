@@ -11,4 +11,3 @@ pin 'jquery', to: 'https://ga.jspm.io/npm:jquery@3.6.0/dist/jquery.js'
 pin 'popper', to: 'popper.js', preload: true
 pin 'bootstrap', to: 'bootstrap.min.js', preload: true
 pin 'vanilla-nested', to: 'vanilla_nested.js', preload: true
-# pin "vanilla-nested", to: "https://ga.jspm.io/npm:vanilla-nested@1.6.1/app/assets/javascripts/vanilla_nested.js"
