@@ -1,6 +1,6 @@
 <p>Hello <%= current_user&.first_name %>!</p>
 <p>Welcome to the Quiz Mania </p>
-<%= link_to 'Add Question', new_question_path if current_user.admin%>
+<%= link_to 'Add Question', new_question_path if current_user.admin?%>
 <%= link_to 'View Question', questions_path %>
-<%= link_to 'Add Categories', new_category_path if current_user.admin %>
+<%= link_to 'Add Categories', new_category_path if current_user.admin? %>
 <%= link_to 'View Categories', categories_path %>

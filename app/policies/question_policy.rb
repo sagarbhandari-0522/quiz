@@ -13,15 +13,23 @@ class QuestionPolicy < ApplicationPolicy
     end
   end
 
+  def index?
+    true
+  end
+
   def show?
     true
   end
 
   def new?
-    @user.admin == true
+    @user.admin?
   end
 
   def edit?
+    new?
+  end
+
+  def create?
     new?
   end
 

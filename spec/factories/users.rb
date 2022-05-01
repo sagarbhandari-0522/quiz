@@ -5,6 +5,6 @@ FactoryBot.define do
     email { Faker::Internet.email }
     password { Faker::Internet.password(8) }
     password_confirmation { password }
-    admin { 'false' }
+    role { 'user' }
   end
 end
