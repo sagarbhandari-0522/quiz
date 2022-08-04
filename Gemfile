@@ -22,6 +22,8 @@ gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 # use for embedding bootstrap
 gem 'bootstrap', '~> 5.1', '>= 5.1.3'
+# use to detect dead code
+gem 'coverband'
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem 'dotenv-rails'
