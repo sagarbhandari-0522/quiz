@@ -12,6 +12,7 @@ Rails.application.configure do
     Bullet.rails_logger  = true
     Bullet.add_footer    = false
   end
+  config.hosts << /[a-z0-9-.]+\.ngrok\.io/
 
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -44,6 +45,12 @@ Rails.application.configure do
 
     config.cache_store = :null_store
   end
+
+  # logger setting
+  config.log_formatter = ::Logger::Formatter.new
+  require 'syslog/logger'
+
+  config.log_datetime_format = '%Y-%m-%d %H:%M:%S'
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
