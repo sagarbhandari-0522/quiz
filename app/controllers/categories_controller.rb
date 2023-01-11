@@ -2,13 +2,18 @@
 
 class CategoriesController < ApplicationController
   before_action :authenticate_user!
-
   before_action :find_category, only: %i[show edit update destroy]
+  rescue_from StandardError do |_e|
+    redirect_to(dashboards_path)
+  end
+
   def index
-    @categories = Category.all
+    @categories = Category.all.order(:created_at)
   end
 
   def show
+    raise(ErrorHandler2::CustomError, 'Category not found') if @category.nil?
+
     @questions = @category.questions
   end
 
@@ -37,7 +42,7 @@ class CategoriesController < ApplicationController
 
   def update
     authorize(@category)
-    if Category.update(category_params)
+    if @category.update(category_params)
       redirect_to(category_path(@category))
     else
       render(:edit, status: :unprocessable_entity)
@@ -57,10 +62,11 @@ class CategoriesController < ApplicationController
   private
 
   def category_params
-    params.require(:category).permit(:name)
+    params[:category][:status] = Integer(params[:category][:status], 10)
+    params.require(:category).permit(:name, :status)
   end
 
   def find_category
-    @category = Category.includes(:questions).find_by(id: params[:id])
+    @category = Category.find_by(id: params[:id])
   end
 end

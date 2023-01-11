@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   resources :quizzes
   get '/play_quiz', to: 'quizzes#select_category', as: :play_quiz
   get '/user_quizzes', to: 'quizzes#user_quizzes'
+  match '*unmatched', to: 'application#not_found_method', via: :all
 end

@@ -6,6 +6,9 @@
 		<div>
 			<%= f.text_field :name, class: "form-control w-75 my-2", placeholder:'Enter Category Name ....'%>
 		</div>
+		<div>
+			<%= f.select :status, options_for_select(Category.statuses.map {|key, value| [key.titleize, value.to_i]}, @category.status)%>
+		</div>
 		<div class='float-right'>
 			<%= f.submit data: {turbo:false},class:'btn btn-sm btn-primary'%>
 		</div>

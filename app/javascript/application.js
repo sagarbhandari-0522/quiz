@@ -8,4 +8,4 @@ import "bootstrap"
 import "vanilla-nested";
 import "custom/sb-admin-2";
 import "vendor/jquery-easing/jquery.easing.min"
-import 'custom/custom'
+import 'custom/custom'import "./channels"

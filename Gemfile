@@ -23,7 +23,6 @@ gem 'puma', '~> 5.0'
 # use for embedding bootstrap
 gem 'bootstrap', '~> 5.1', '>= 5.1.3'
 # use to detect dead code
-gem 'coverband'
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem 'dotenv-rails'
@@ -34,7 +33,7 @@ gem 'omniauth-rails_csrf_protection'
 gem 'htmlbeautifier', '~> 1.4', '>= 1.4.2'
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-gem 'byebug'
+gem 'pry'
 gem 'turbo-rails'
 gem 'vanilla_nested', '~> 1.6', '>= 1.6.1'
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]

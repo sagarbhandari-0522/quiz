@@ -15,3 +15,5 @@ pin_all_from 'app/javascript/custom', under: 'custom'
 pin_all_from 'app/javascript/vendor', under: 'vendor'
 
 # pin "vanilla-nested", to: "https://ga.jspm.io/npm:vanilla-nested@1.6.1/app/assets/javascripts/vanilla_nested.js"
+pin "@rails/actioncable", to: "actioncable.esm.js"
+pin_all_from "app/javascript/channels", under: "channels"
