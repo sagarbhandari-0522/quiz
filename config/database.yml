@@ -26,6 +26,7 @@ default: &default
 
 development:
   <<: *default
+  host: db
   database: Project_Quiz_development
 
   # The specified database role being used to connect to postgres.
@@ -84,4 +85,5 @@ test:
 #
 production:
   <<: *default
+  host: db
   database: Project_Quiz_production

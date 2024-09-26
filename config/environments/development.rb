@@ -3,6 +3,12 @@
 require 'active_support/core_ext/integer/time'
 
 Rails.application.configure do
+  config.hosts = [
+    IPAddr.new('0.0.0.0/0'), # All IPv4 addresses.
+    IPAddr.new('::/0'),      # All IPv6 addresses.
+    'localhost'              # The localhost reserved domain.
+  ]
+
   config.after_initialize do
     Bullet.enable        = true
     Bullet.alert         = false
@@ -81,6 +87,7 @@ Rails.application.configure do
     authentication: 'plain',
     enable_starttls_auto: true
   }
+
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
 
