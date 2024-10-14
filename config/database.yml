@@ -17,16 +17,16 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  username: postgres
-  password: root
-  host: localhost
+
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
-  host: db
+  username: postgres
+  password: root
+  host: localhost
   database: Project_Quiz_development
 
   # The specified database role being used to connect to postgres.
@@ -85,5 +85,8 @@ test:
 #
 production:
   <<: *default
-  host: db
-  database: Project_Quiz_production
+  username: postgres
+  password: Sagar123
+  host: quiz-database.postgres.database.azure.com
+  sslmode: require
+  database: postgres

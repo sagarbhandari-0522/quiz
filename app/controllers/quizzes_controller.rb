@@ -36,10 +36,10 @@ class QuizzesController < ApplicationController
     @answers = @quiz.find_answer
     respond_to do |format|
       format.html
-      format.pdf do
-        pdf = Quizzes::GenerateReportPdfService.new(quiz: @quiz).execute
-        send_data(pdf, filename: 'quiz.pdf', type: 'application/pdf')
-      end
+      # format.pdf do
+      #   # pdf = Quizzes::GenerateReportPdfService.new(quiz: @quiz).execute
+      #   # send_data(pdf, filename: 'quiz.pdf', type: 'application/pdf')
+      # end
     end
     mark_notifications_as_read
   end

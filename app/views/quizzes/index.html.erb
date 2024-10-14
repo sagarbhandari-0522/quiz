@@ -12,13 +12,13 @@
 <br>
 <div class="row mt-3 mb-5">
 	<div class='col-1'></div>
-	<% if current_user.admin?%>
+	<% if current_user.admin? %>
 		<div class="col-3">
 			<%= select_tag "user_id",options_from_collection_for_select(@users, "id", "email"),class: 'form-select form-select-md mb-1 pointer',:prompt => "Select a user", :onchange=>"user_quiz(this.value)"%>
 		</div>
 	<% end %>
 	<div class="col-6 ml-5">
-		<%= render 'shared/search_form'%>
+		
 	</div>
 </div>
 <div id='show'>
